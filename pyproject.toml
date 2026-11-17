@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ms-custom-domain-mx-finder"
+version = "0.1.0"
+description = "Generate and verify Microsoft 365 Exchange Online MX hosts for custom domains"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dnspython>=2.6",
+    "rich>=13.0",
+]
+keywords = ["microsoft-365", "exchange-online", "mx", "dns", "email"]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: Name Service (DNS)",
+    "Topic :: System :: Systems Administration",
+]
+
+[project.scripts]
+mxfinder = "mxfinder:main"
+
+[tool.setuptools]
+py-modules = ["mxfinder"]
+
+[tool.uv]
+package = true
